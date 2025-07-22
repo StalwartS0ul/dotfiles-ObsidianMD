@@ -1,3 +1,5 @@
+# used with vimrc plugin, filename is .obsidian.vimrc
+
 " row navigation
 nmap j gj
 nmap k gk
