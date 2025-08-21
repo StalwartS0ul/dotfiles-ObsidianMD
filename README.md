@@ -1,2 +1,2 @@
-# dotfiles-ObsidianMD
+# ObsidianMD
 Styles, CSS and *.vimrc from my Obsidian MD vault.
