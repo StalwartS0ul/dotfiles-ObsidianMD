@@ -1,2 +1,2 @@
 # ObsidianMD
-Styles, CSS and *.vimrc from my Obsidian MD vault.
+Styles, Templates, CSS and *.vimrc from my Obsidian MD vault.
