@@ -23,7 +23,7 @@ banner-x:
 ---
 
 ```dataviewjs
-const page = dv.page(dv.current().file.path);
+const page = dv.current();
 
 // cover
 let coverImageHTML = page.banner
