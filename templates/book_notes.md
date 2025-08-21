@@ -6,7 +6,6 @@ tags:
   - READING_AS_A_HOBBY
 aliases:
   - "{{title}}"
-title: "{{title}}"
 series:
 author: "{{author}}"
 pages: "{{totalPage}}"
