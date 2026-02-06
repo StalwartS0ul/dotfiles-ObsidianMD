@@ -1,0 +1,113 @@
+/* inspired by https://github.com/folke/todo-comments.nvim */
+
+/* syntax 
+
+Will match only the following -
+  - TODO: text
+  - [ ] TODO: text
+  - [x] TODO: text
+
+And will not work for -
+  - something TODO: text
+  - [ ] something TODO: text
+  TODO: text
+
+*/
+
+/* --- !! CHANGE COLORS HERE !! --- */ 
+/* colors taken from https://github.com/catppuccin/catppuccin */
+
+:root {
+  --todo-color: #74c7ec; /* TODO */
+  --bugfix-color: #f38ba8; /* BUG + FIX */
+  --note-color: #94e2d5; /* NOTE */
+  --warn-color: #f9e2af; /* WARN */
+  --perf-color: #cba6f7; /* PERF */
+
+  /* Background opacity (0–100%) */
+  --highlight-opacity: 20%;
+}
+
+/* CONFIG */
+
+.markdown-reading-view li,
+.markdown-source-view.mod-cm6 .cm-line {
+  padding-left: 0.75em;
+  border-radius: 4px;
+}
+
+/* --- ADD OR REPLACE WITH YOUR OWN IN THE LINES BELOW --- */
+
+/* TODO */
+
+.markdown-reading-view li:has(:contains("TODO:")),
+.markdown-source-view.mod-cm6 .cm-line
+  :has(.cm-formatting-list-ul)
+  :has(:contains("TODO:")) {
+  background-color: color-mix(
+    in srgb,
+    var(--todo-color) var(--highlight-opacity),
+    transparent
+  );
+  border-left: 4px solid var(--todo-color);
+}
+
+/* BUG + FIX */
+
+.markdown-reading-view li:has(:contains("BUG:")),
+.markdown-reading-view li:has(:contains("FIX:")),
+.markdown-source-view.mod-cm6 .cm-line
+  :has(.cm-formatting-list-ul)
+  :has(:contains("BUG:")),
+.markdown-source-view.mod-cm6 .cm-line
+  :has(.cm-formatting-list-ul)
+  :has(:contains("FIX:")) {
+  background-color: color-mix(
+    in srgb,
+    var(--bugfix-color) var(--highlight-opacity),
+    transparent
+  );
+  border-left: 4px solid var(--bugfix-color);
+}
+
+/* NOTE */
+
+.markdown-reading-view li:has(:contains("NOTE:")),
+.markdown-source-view.mod-cm6 .cm-line
+  :has(.cm-formatting-list-ul)
+  :has(:contains("NOTE:")) {
+  background-color: color-mix(
+    in srgb,
+    var(--note-color) var(--highlight-opacity),
+    transparent
+  );
+  border-left: 4px solid var(--note-color);
+}
+
+/* WARN */
+
+.markdown-reading-view li:has(:contains("WARN:")),
+.markdown-source-view.mod-cm6 .cm-line
+  :has(.cm-formatting-list-ul)
+  :has(:contains("WARN:")) {
+  background-color: color-mix(
+    in srgb,
+    var(--warn-color) var(--highlight-opacity),
+    transparent
+  );
+  border-left: 4px solid var(--warn-color);
+}
+
+/* PERF */
+
+.markdown-reading-view li:has(:contains("PERF:")),
+.markdown-source-view.mod-cm6 .cm-line
+  :has(.cm-formatting-list-ul)
+  :has(:contains("PERF:")) {
+  background-color: color-mix(
+    in srgb,
+    var(--perf-color) var(--highlight-opacity),
+    transparent
+  );
+  border-left: 4px solid var(--perf-color);
+}
